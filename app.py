@@ -21,7 +21,7 @@ GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 
 async def initialize_model():
-    model = PineconeEmbeddings(model="multilingual-e5-large")
+    model = PineconeEmbeddings(model="multilingual-e5-large",pinecone_api_key=PINECONE_API_KEY)
     return model
 
 async def get_vectorstore_from_url(url,model):
